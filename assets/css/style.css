@@ -1,0 +1,541 @@
+@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    color:white;
+    font-family: "Montserrat", sans-serif;
+}
+@font-face {
+    font-family: 'ProtestGuerilla';
+    src:url('/assets/fonts/ProtestGuerrilla-Regular.ttf') format('truetype'),
+}
+
+p {
+
+}
+
+body {
+    height:auto;
+    min-height:100vh;
+}
+
+.app {
+    width:100%;
+    height:100vh;
+/*    background: #17202a;*/
+    background: url('/assets/images/background2.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+}
+
+.navbar {
+    width:100%;
+    height:10vh;
+    background:#1b2631;
+    display:flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, .5);
+}
+
+.navbar .brand {
+   min-width:200px;
+   height:100%;
+   display:flex;
+   align-items: center;
+   justify-content: space-between;
+    font-size:25px;
+}
+
+.navbar .brand p {
+    font-family:'ProtestGuerilla';
+}
+
+.navbar-list {
+    height:100%;
+    display: grid;
+    grid-template-columns:repeat(3, auto);
+    align-items: center;
+    grid-gap:10px;
+    list-style: none;
+    /* font-family: "Fira Sans", sans-serif; */
+    font-family: "IBM Plex Sans", sans-serif;
+    padding:10px;
+}
+
+.navbar-list li {
+    display: flex;
+    align-items:center;
+    padding-left: 5px;
+    padding-right:5px;
+    padding:.5rem;
+    border-radius:10px;
+    background:#283747;
+    cursor: pointer;
+    transition: background .3s ease;
+}
+
+.navbar-list li:hover {
+    background:#364a5f;
+}
+
+.navbar-list li:hover img {
+    animation: RotateNavbarLinkImage 1s;
+}
+
+.navbar-menu {
+    display:none
+}
+
+.navbar-menu img {
+    width:38px;
+}
+
+
+@keyframes  RotateNavbarLinkImage {
+    50%{
+        transform:rotate(350deg);
+    }
+}
+
+.navbar-list li img {
+    margin-right:10px;
+}
+.navbar-list img {
+    width:30px;
+}
+
+.dropdown-menu {
+    display: none;
+}
+
+.dropdown-menu.active {
+    display: flex;
+    flex-direction: column;
+    position:fixed;
+    width: 200px;
+    min-height: 100px;
+    background: #303030;
+    border-radius: 10px;
+    top:12vh;
+    right:10px;
+    padding:10px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    z-index:100;
+
+}
+
+.dropdown-menu.active li {
+    width:100%;
+    height:50px;
+    margin-top:5px;
+    margin-bottom:5px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    background:#283747;
+    border-radius: 5px;
+    padding-left:10px;
+}
+
+.dropdown-menu.active li img {
+    margin-right:10px;
+}
+
+.content {
+    width:100%;
+    min-height: 80vh;
+    height:auto;
+    display:grid;
+    grid-template-columns: 1fr .4fr;
+}
+
+.content-container {
+    height:100%;
+}
+
+.mini-container {
+    /*height:95%;
+    display:flex;
+    justify-content: flex-start;
+    align-items: space-around;
+    flex-wrap:wrap;
+    flex-direction: column;
+    background:linear-gradient(25deg, #21618c,#1c5e8a,#1b81c5);
+    padding-top:10px;
+    padding:5px;
+    margin-top:5%;
+    margin-right:5px;
+    border-radius: 15px;*/
+    padding:10px;
+    padding-top:30px;
+    padding-bottom:30px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.rec-wp-item {
+    width:100%;
+    height:auto;
+    background-color: #0e4163;
+    border-radius:10px;
+    padding:5px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    animation: RecInformation 1s infinite;
+}
+
+@keyframes RecInformation {
+    50%{
+       
+    }
+}
+
+.wp-one-main-content {
+    width: 95%;
+    height:400px;
+    background:#181818;
+    border-radius: 40px;
+    margin:30px auto;
+    background:url('/assets/images/wp-content-image.jpg');
+    background-position: bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 1000px 1000px rgba(0, 0, 0, .9) inset;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.wp-content {
+    font-family: "IBM Plex Sans", sans-serif;
+    /* font-family: "Moderustic", sans-serif; */
+    font-style: normal;
+    font-weight:500;
+    font-optical-sizing: auto;
+    text-align: center;
+    font-size:20px;
+}
+
+.latest-wp-content, .social-wp-content {
+    width:95%;
+    height:auto;
+    padding:10px;
+    margin:10px auto;
+}
+
+.wp-title {
+    width: 100%;
+    height:100%;
+    background: linear-gradient(25deg, #1b4f72, #21618c, #2874a6);
+    padding:10px;
+    border-left: 5px solid rgb(83, 152, 255);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0px 0px 5px 1px rgba(63, 37, 180, 0.9);
+    animation: headTitleAnimation 1s infinite;
+}
+
+@keyframes headTitleAnimation {
+    50%{
+        border-left: 5px solid #083f78;
+    }
+}
+
+.category-games-wp {
+    width: 100%;
+    height:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:10px;
+    flex-wrap: wrap;
+    padding:0;
+
+    
+}
+
+.category-item {
+    width:200px;
+    height:350px;
+    border-radius:20px;
+    overflow:hidden;
+    transition: all ease .5s;
+    margin-top:20px;
+    margin-left:5px;
+    margin-right:5px;
+}
+
+.category-item .box-down {
+    position:relative;
+    bottom:60px;
+    text-align: center;
+    font-size:24px;
+
+}
+
+.category-item img {
+    width:100%;
+    opacity:.8;
+    height:100%;
+}
+
+.category-item:hover {
+    transform:scale(1.1);
+    cursor: pointer;
+}
+
+.category-item:hover img {
+    opacity: 1;
+}
+
+.game-server-wp-rec {
+    width:100%;
+    padding-top:15px;
+
+}
+
+.banner-wp {
+    width: 100%;
+    height: 200px;
+    background: url('/assets/images/san-fierro-banner.png');
+    border-radius: 20px;
+    box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, .5) inset;
+    background-color: rgba(0, 0, 0, 1);
+    background-size: cover;
+
+}
+
+.banner-wp .title,
+.banner-wp .server-ip,
+.banner-wp .players {
+    text-align: center;
+    padding-top:5px;
+    color:rgba(255, 255, 255, .7);
+}
+
+.banner-wp .btns {
+    width: 60%;
+    height:50px;
+    margin:10px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.banner-wp .btns button {
+    width: 120px;
+    color:white;
+    height: 50px;
+    background: transparent;
+    border-radius: 10px;
+    border: 1px solid #2ca0ec;
+    cursor: pointer;
+    background: linear-gradient(25deg, #226ebf,#1f66b1, #105aa8);
+    transition: transform ease .3s;
+}   
+
+.banner-wp .btns button:hover{
+    transform: scale(1.1);
+}
+footer {
+    width:100%;
+    height:10vh;
+    display:flex;
+    align-items:Center;
+    padding-left:10px;
+    font-size:18px;
+    background:#1b2631;
+    box-shadow:5px 5px 5px 5px rgba(0, 0, 0, .5);
+}
+
+
+.dev-ops-wp {
+    width:100%;
+    min-height: 300px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.dev-ops-wp img {
+    margin-bottom:10px;
+
+}
+
+
+.dev-ops-wp h4 {
+    font-weight: bold;
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.dev-ops-wp .lide {
+    width:200px;
+    height: 50px;
+    background:#2874a6;
+    margin-top:10px;
+    border-radius: 10px;
+
+}
+
+.dev-ops-wp .title {
+    font-size:12px;
+}
+
+/* ALL GAMES Page */
+
+.header-games-wrapper {
+    width: 95%;
+    margin:30px auto;
+    border-radius: 10px;
+    height: 250px;
+    background: url('/assets/images/all-games-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 0px 100px 10px #000 inset;
+}
+
+
+.header-games-wrapper .wrapper {
+    width: 100%;
+    height: 100%;
+/*    backdrop-filter: blur(2px);*/
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.header-games-wrapper .title {
+    text-align: center;
+    font-weight: 400;
+}
+
+.category-with-button {
+    width: 95%;
+    height:auto;
+    padding:10px;
+    margin:0 auto;
+    background: #1b2631;
+    border-radius: 20px;
+}
+
+.category-with-button .btn {
+    min-width: 60px;
+    height: 45px;
+    background: #2c51b2;
+    padding:5px;
+    border-radius: 5px;
+    border:none;
+    font-size:18px;
+}
+
+.games-content-wrapper {
+    width: 95%;
+    height: auto;
+    padding:3px;
+    border:1px solid gray;
+    margin:30px auto;
+}
+
+.games-content-wrapper .functions-wrapper {
+    width: 100%;
+    height: 60px;
+    background: red;
+}
+/*
+
+============================
+
+ || MOVING SCREEN 
+
+============================
+
+*/
+
+@media screen and (max-width: 992px){
+    .content {
+        grid-template-columns: 1fr;
+    }
+    .mini-container {
+        height:350px;
+        margin-bottom:20px;
+        border-radius: 15px;
+        margin:0 auto;
+        width:99%;
+    }
+
+    .banner-wp .btns {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 792px) {
+    .navbar {
+        padding: 10px;
+    }
+    .navbar-list {
+        display:none;
+        z-index: -1;
+    }
+
+    .navbar-menu {
+        display: flex;
+        align-items:center;
+        justify-content: center;
+    }
+
+    .content {
+        grid-gap:20px;
+    }
+    .content-container{
+        width:100%;
+    }
+
+    .game-server-wp-rec {
+        justify-items:center;
+        text-align: center;
+    }
+    
+    h1{
+        font-size:24px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    h3{
+        font-size:18px;
+    }
+
+    p{
+        font-size:auto;
+    }
+
+    .banner-wp .btns {
+        width: 100%;
+    }
+
+}
+
+
+@media screen and (max-width: 592px) {
+    .mini-container {
+        height: auto;
+        padding:10px;
+        background: #1b2631;
+    }
+}
